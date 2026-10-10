@@ -1,6 +1,6 @@
 [requires]
 spdlog/1.14.1
-rapidjson/1.1.0
+rapidjson/cci.20250205
 jemalloc/5.3.0
 snappy/1.1.7
 gflags/2.2.2
@@ -18,4 +18,8 @@ openssl/3.4.1
 PkgConfigDeps
 
 [options]
-abseil/*:shared=False  # 如果使用动态库
+# 全部静态，方便收集成 .a 拷贝使用
+*:shared=False
+# spdlog 走 header-only + std::format，避免再编 fmt（需要 C++20，见 scripts/export_deps.sh）
+spdlog/*:header_only=True
+spdlog/*:use_std_fmt=True

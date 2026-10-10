@@ -1,5 +1,6 @@
-build/*.pc
-build/*.sh
+build/
+dist/
+.venv/
 logs/*.log
 .vscode/settings.json
 src/*.bin
@@ -7,5 +8,7 @@ scripts/__pycache__/*.pyc
 src/alg/climbStairs
 data/doc_topic.dat
 data/topic_word.dat
+data/out.npy
 src/proto/*.pb.cc
 src/proto/*.pb.h
+examples/*.bin
